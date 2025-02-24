@@ -17,6 +17,7 @@ type Props = {
 export const Room: React.FC<Props> = ({ host }) => {
   const params = useParams()
   const searchParams = useSearchParams()
+  const gatewayIndex = searchParams!.get('gateway') || 0;
   const token = searchParams!.get('token') || ''
   const room = params?.room as string
   const peer = searchParams!.get('peer') || ''
@@ -40,7 +41,7 @@ export const Room: React.FC<Props> = ({ host }) => {
   const [inRoom, setInRoom] = useState(false)
 
   return (
-    <Atm0sMediaProvider gateway={env.GATEWAYS} cfg={cfg} prepareAudioReceivers={3} prepareVideoReceivers={3}>
+    <Atm0sMediaProvider gateway={env.GATEWAYS[gatewayIndex]} cfg={cfg} prepareAudioReceivers={3} prepareVideoReceivers={3}>
       <Layout>
         <MediaProvider>
           {!inRoom && <SettingsMedia onConnected={() => setInRoom(true)} />}

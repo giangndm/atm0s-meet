@@ -139,7 +139,7 @@ export const NewRoom: React.FC<Props> = () => {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
-                            {map([gateways], (gateway, index) => (
+                            {map(gateways, (gateway, index) => (
                               <SelectItem key={index} value={String(index)}>
                                 {gateway}
                               </SelectItem>
@@ -186,7 +186,7 @@ export const NewRoom: React.FC<Props> = () => {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
-                            {map([gateways], (gateway, index) => (
+                            {map(gateways, (gateway, index) => (
                               <SelectItem key={index} value={String(index)}>
                                 {gateway}
                               </SelectItem>
@@ -305,7 +305,7 @@ export const NewRoom: React.FC<Props> = () => {
 //       </SelectTrigger>
 //       <SelectContent>
 //         <SelectGroup>
-//           {map([gateways], (gateway, index) => (
+//           {map(gateways, (gateway, index) => (
 //             <SelectItem key={index} value={String(index)}>
 //               {gateway}
 //             </SelectItem>

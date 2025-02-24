@@ -3,7 +3,7 @@
 import { env } from '@/config'
 
 export const generateToken = async (room: string, peer: string): Promise<string> => {
-  const rawResponse = await fetch(env.GATEWAYS + '/token/webrtc', {
+  const rawResponse = await fetch(env.GATEWAYS[0] + '/token/webrtc', {
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + env.APP_SECRET,
