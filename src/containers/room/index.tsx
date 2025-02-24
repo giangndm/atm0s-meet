@@ -17,7 +17,7 @@ type Props = {
 export const Room: React.FC<Props> = ({ host }) => {
   const params = useParams()
   const searchParams = useSearchParams()
-  const gatewayIndex = searchParams!.get('gateway') || 0;
+  const gatewayIndex = parseInt(searchParams!.get('gateway') || '0')
   const token = searchParams!.get('token') || ''
   const room = params?.room as string
   const peer = searchParams!.get('peer') || ''
